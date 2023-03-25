@@ -26,7 +26,7 @@ Only stuff in the {} are read, so you can leave headings and such outside for ea
 
 Make sure you match all curly brackets, if you forget to open/close it will not load correctly!
 
-![](RackMultipart20230325-1-m8rviy_html_b15426a133532f66.png)
+
 
 **GENERAL WORK FLOW TIPS**
 
@@ -80,7 +80,7 @@ _[sales]\<0\>/it_
 
 These lines form the main buttons that all other buttons will be sub menus of:
 
-![](RackMultipart20230325-1-m8rviy_html_38efb2f823a0995.png)
+
 
 When adding you don't need to add the \<current count\> it is automatically added.
 
@@ -110,11 +110,9 @@ When clicked, depending on the options multiple thinks may occur. If there optio
 
 If the line is tabbed, then it will become a new submenu. For instance, if kpi.txt looks like:
 
-![](RackMultipart20230325-1-m8rviy_html_79f4de6139d973bf.png)
 
 Then, the menu looks like:
 
-![](RackMultipart20230325-1-m8rviy_html_6737f0749ad936ad.png)
 
 _~REGEX@HTML LINK_
 
@@ -136,7 +134,6 @@ _;COMMENT_
 
 Example;
 
-![](RackMultipart20230325-1-m8rviy_html_df86bf7a9d296bdf.png)
 
 You may add a comment above a button as per above.
 
@@ -156,8 +153,6 @@ Standard button, however it is deleted after 'reset' is used
 
 All buttons added by right click are default to be a temporary button, use \>BUTTON NAME, when adding button to make it permanent.
 
-## ![](RackMultipart20230325-1-m8rviy_html_bc2abf48ebbbe67a.gif)General Usage:
-
 - Dragging the ends will move the tool bar
 - Hover over a menu to open it _(no clicking required)_
 - Left Click to add a count to that button, copy pre-set message to clipboard
@@ -170,7 +165,7 @@ All buttons added by right click are default to be a temporary button, use \>BUT
   - ELSE IF it is a templated button (ie loaded from the RTF document) then if your current clipboard contains "$$$" then it will insert the new message into the clipboard. This works same as above point, however allows you to insert batch photos into generic claim email! Much faster.
   - ~~CTRL/SHIFT + Left Click~~~~ will remove duplicate --name tags and append it to the end, ~~no longer needed as names are now added to comments
 - ~~ALT + Left Click~~~~ to open link if /w is selected. ~~Annoying feature, if it is a link then it will open, you can auto copy to clipboard too.
-- ![](RackMultipart20230325-1-m8rviy_html_36c006d262b8d398.png)Right Click
+Right Click
   - ~~**Main Menu**~~~~ to open floating menu that allows quick add to submenu, removing the Main Menu button that was right clicked. ~~Removed useless. Use text bar and type "!d" to delete submenu, use settings\>edit to make additions to menu (ctrl+s to reload)
   - **Sub Menu**
     - Normal button:
@@ -236,8 +231,5 @@ ALL BUTTONS:
 - **AutoSave \>** will automatically save both windows every 15mins (time can be changed in settings.txt)
 - **New Lines \>** when viewing stats in Tracker, temporary info can be all on new lines, or squished in as few lines as possible
 
-![](RackMultipart20230325-1-m8rviy_html_f3f145f24b89a450.gif)
+![nt3](https://user-images.githubusercontent.com/14177650/227681739-ed31b68f-7daa-4da5-bf99-d417ecde7669.gif)
 
-~~1~~~~ _- EXAMPLE OF LONG PRESS (adding temp info with Right Click and quickly incrementing them with Long Press)_ ~~now shows sub automatically
-
-![](RackMultipart20230325-1-m8rviy_html_dac8c35ee2003ed.gif)
