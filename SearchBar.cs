@@ -78,6 +78,8 @@ namespace NoteTrackerV3
                 stores = new List<KeyValuePair<string, Panel>>();
                 parent.Controls.Add(states);
                 states.BackColor = settings.colorOf("ButtonBGColor");
+                states.ForeColor = settings.colorOf("ButtonFGColor");
+
                 states.Height = 20;
 
                 states.Location = new Point(0, 20);
@@ -109,6 +111,7 @@ namespace NoteTrackerV3
                                 else rb.Location = new Point(0, 0);
                                 rb.AutoSize = true;
                                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                                rb.ForeColor = settings.colorOf("ButtonFGColor");
                                 rb.Margin = new Padding(0, 0, 0, 0);
                                 rb.Appearance = Appearance.Button;
                                 rb.Text = currentLine;
@@ -123,6 +126,7 @@ namespace NoteTrackerV3
                                 curPanel.BringToFront();
                                 curPanel.Hide();
                                 curPanel.BackColor = settings.colorOf("ButtonBGColor");
+                                curPanel.ForeColor = settings.colorOf("ButtonFGColor");
                                 parent.Controls.Add(curPanel);
                                 stores.Add(new KeyValuePair<string, Panel>(currentLine, curPanel));
 
@@ -136,6 +140,8 @@ namespace NoteTrackerV3
                                 cb.Text = currentLine.Trim('\t');
                                 cb.AutoSize = true;
                                 cb.BackColor = settings.colorOf("ButtonBGColor");
+                                cb.ForeColor = settings.colorOf("ButtonFGColor");
+
                                 cb.Appearance = Appearance.Button;
                                 cb.Margin = new Padding(0, 0, 0, 0);
                                 cb.LostFocus += p_parent.lostme;
@@ -170,10 +176,13 @@ namespace NoteTrackerV3
             if (cb.Checked)
             {
                 cb.BackColor = settings.colorOf("ButtonBGColorHover");
+                cb.ForeColor = settings.colorOf("ButtonFGColorHover");
+
             }
             else
             {
                 cb.BackColor = settings.colorOf("ButtonBGColor");
+                cb.ForeColor = settings.colorOf("ButtonFGColor");
             }
         }
 
@@ -184,6 +193,8 @@ namespace NoteTrackerV3
             if (rb.Checked)
             {
                 rb.BackColor = settings.colorOf("ButtonBGColorHover");
+                rb.ForeColor = settings.colorOf("ButtonFGColorHover");
+
                 var found = stores.Find(p => p.Key == rb.Text);
                 if(found.Key != null){
                     found.Value.Show();
@@ -194,6 +205,7 @@ namespace NoteTrackerV3
             else
             {
                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                rb.ForeColor = settings.colorOf("ButtonFGColor");
                 if (shownStore != null) shownStore.Hide();
             }
         }
@@ -205,6 +217,7 @@ namespace NoteTrackerV3
                 foreach (var x in states.Controls)
                 {
                     ((RadioButton)x).BackColor = settings.colorOf("ButtonBGColor");
+                    ((RadioButton)x).ForeColor = settings.colorOf("ButtonFGColor");
                 }
             }
             if (stores != null) {
@@ -213,6 +226,7 @@ namespace NoteTrackerV3
                     foreach (var y in x.Value.Controls)
                     {
                         ((CheckBox)y).BackColor = settings.colorOf("ButtonBGColor");
+                        ((CheckBox)y).ForeColor = settings.colorOf("ButtonFGColor");
                     }
                 }
             }
@@ -279,10 +293,12 @@ namespace NoteTrackerV3
             if (rb.Checked)
             {
                 rb.BackColor = settings.colorOf("ButtonBGColorHover");
+                rb.ForeColor = settings.colorOf("ButtonFGColorHover");
             }
             else
             {
                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                rb.BackColor = settings.colorOf("ButtonFGColor");
             }
         }
 
@@ -293,12 +309,14 @@ namespace NoteTrackerV3
             if (rb.Checked)
             {
                 rb.BackColor = settings.colorOf("ButtonBGColorHover");
+                rb.ForeColor = settings.colorOf("ButtonFGColorHover");
                 searchHandler(mb, searchBar.Text);
                 hide(true);
             }
             else
             {
                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                rb.ForeColor = settings.colorOf("ButtonFGColor");
             }
         }
 
@@ -441,6 +459,7 @@ namespace NoteTrackerV3
                     rb.Location = new Point(startx, rb.Location.Y);
                     rb.AutoSize = true;
                     rb.BackColor = settings.colorOf("ButtonBGColor");
+                    rb.ForeColor = settings.colorOf("ButtonFGColor");
                     rb.Margin = new Padding(0, 0, 0, 0);
                     rb.LostFocus += S_LostFocus;
                     rb.CheckedChanged += Rb_CheckedChangedSTART;
@@ -462,6 +481,7 @@ namespace NoteTrackerV3
                     rb.Location = new Point(startx, rb.Location.Y);
                     rb.AutoSize = true;
                     rb.BackColor = settings.colorOf("ButtonBGColor");
+                    rb.ForeColor = settings.colorOf("ButtonFGColor");
                     rb.Margin = new Padding(0, 0, 0, 0);
                     rb.LostFocus += S_LostFocus;
                     rb.CheckedChanged += Rb_CheckedChangedEND;
@@ -475,6 +495,8 @@ namespace NoteTrackerV3
             searchBar.Width = startx;
             endState.BackColor = settings.colorOf("ButtonBGColor");
             startState.BackColor = settings.colorOf("ButtonBGColor");
+            endState.ForeColor = settings.colorOf("ButtonFGColor");
+            startState.ForeColor = settings.colorOf("ButtonFGColor");
 
             this.LostFocus += S_LostFocus;
 
@@ -494,13 +516,18 @@ namespace NoteTrackerV3
         {
             endState.BackColor = settings.colorOf("ButtonBGColor");
             startState.BackColor = settings.colorOf("ButtonBGColor");
+            endState.ForeColor = settings.colorOf("ButtonFGColor");
+            startState.ForeColor = settings.colorOf("ButtonFGColor");
             foreach (RadioButton x in startState.Controls)
             {
                 x.BackColor = settings.colorOf("ButtonBGColor");
+                x.ForeColor = settings.colorOf("ButtonFGColor");
+
             }
             foreach (RadioButton x in endState.Controls)
             {
                 x.BackColor = settings.colorOf("ButtonBGColor");
+                x.ForeColor = settings.colorOf("ButtonFGColor");
             }
         }
 
@@ -517,10 +544,14 @@ namespace NoteTrackerV3
             {
                 start = rb.Text;
                 rb.BackColor = settings.colorOf("ButtonBGColorHover");
+                rb.ForeColor = settings.colorOf("ButtonFGColorHover");
+
             }
             else
             {
                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                rb.ForeColor = settings.colorOf("ButtonFGColor");
+
             }
         }
 
@@ -532,12 +563,15 @@ namespace NoteTrackerV3
             {
                 end = rb.Text;
                 rb.BackColor = settings.colorOf("ButtonBGColorHover");
+                rb.ForeColor = settings.colorOf("ButtonFGColorHover");
                 searchHandler(mb, searchBar.Text);
                 hide(true);
             }
             else
             {
                 rb.BackColor = settings.colorOf("ButtonBGColor");
+                rb.ForeColor = settings.colorOf("ButtonFGColor");
+
             }
         }
 
