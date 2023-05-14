@@ -30,8 +30,6 @@ Make sure you match all curly brackets, if you forget to open/close it will not 
 
 **GENERAL WORK FLOW TIPS**
 
-![nt3](https://user-images.githubusercontent.com/14177650/227681739-ed31b68f-7daa-4da5-bf99-d417ecde7669.gif)
-
 ![nt1](https://user-images.githubusercontent.com/14177650/227681828-0e67240b-86a4-446d-9b5c-95bd520e4d40.png)
 
 - It is designed largely for my workflow ie lots of calls, Zendesk and Claims, but should be versatile enough to help most work flows!
