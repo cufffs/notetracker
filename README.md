@@ -1,4 +1,5 @@
-[recording_2023-05-14-173244.webm](https://github.com/cufffs/notetracker/assets/14177650/756be837-1222-4bba-9fdf-5a4ab479876a)
+[record.webm](https://github.com/cufffs/notetracker/assets/14177650/b7635091-9c9e-456a-8e36-78ec4729547b)
+
 
 **NoteTracker – read me / how to :** quite long to read, and probably unnecessary unless you want to optimize it for your own work flow / make use of all features
 
