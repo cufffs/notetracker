@@ -121,6 +121,13 @@ namespace NoteTrackerV3
                     _pad.SaveFile("kpi.txt", RichTextBoxStreamType.PlainText);
                     if (callback != null)
                         callback.Invoke(sender, e);
+                    e.Handled = true;
+                }
+                if (e.KeyCode == Keys.C)
+                {
+                    var html = RtfPipe.Rtf.ToHtml(_pad.SelectedRtf);
+                    ClipboardHelper.CopyToClipboard(html, _pad.SelectedText, _pad.SelectedRtf);
+                    e.Handled = true;
                 }
             }
         }
