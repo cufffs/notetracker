@@ -142,7 +142,6 @@ namespace NoteTrackerV3
             p_settingsWindow.TopMost = settings.BoolOf("AlwaysOnTop");
 
             p_pad = new Pad();
-            p_pad.Visible = settings.BoolOf("PadWindow");
 
             this.Location = new Point(settings.IntOf("TrackerX"), settings.IntOf("TrackerY"));
 
@@ -201,6 +200,7 @@ namespace NoteTrackerV3
         }
         private void save(Object o = null, EventArgs e = null)
         {
+            settings.set("PadWindow", this.p_pad.Visible.ToString());
             settings.set("TrackerX", this.Location.X.ToString());
             settings.set("TrackerY", this.Location.Y.ToString());
             settings.set("TrackerPadX", this.p_scratchPad.Location.X.ToString());
