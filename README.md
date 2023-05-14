@@ -1,3 +1,5 @@
+https://github.com/cufffs/notetracker/assets/14177650/89d2ff0a-3532-4846-839b-77057dd3694a
+
 **NoteTracker – read me / how to :** quite long to read, and probably unnecessary unless you want to optimize it for your own work flow / make use of all features
 
 _Important files:_
