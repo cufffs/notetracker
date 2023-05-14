@@ -25,7 +25,7 @@ namespace NoteTrackerV3
                 {
                     forms.Add(new Tracker());
                 }
-                if (settings.BoolOf("PadWindow"))
+                //if (settings.BoolOf("PadWindow"))
                     //forms.Add(new Pad());
 
                 if (forms.Count > 0)
