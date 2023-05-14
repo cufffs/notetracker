@@ -21,24 +21,29 @@ namespace NoteTrackerV3
 
         private MouseEvent deleteFileEvent = null;
 
+        private int sizerWidth = 10, sizerHeight = 10;
+
         public Pad()
         {
             this.Icon = Resources.favicon;
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.BackColor = settings.colorOf("ButtonBGColor");
+            //this.BackColor = settings.colorOf("ButtonBGColor");
+            this.TransparencyKey = this.BackColor = Color.Lime;
+
             this.TopMost = settings.BoolOf("AlwaysOnTop");
             this.Name = "PadWindow";
-
+            this.Visible = settings.BoolOf("PadWindow");
             this.Width = settings.IntOf("NotepadWidth");
             this.Height = settings.IntOf("NotepadHeight");
             this.Location = new Point(settings.IntOf("NotepadX"), settings.IntOf("NotepadY"));
 
             _pad = new NotePd(this);
-            _sizer = new Sizer(this, new Point(this.Width - 10, this.Height - 10));
+            _pad.Width -= sizerWidth;
+            _sizer = new Sizer(this, new Point(this.Width - sizerWidth, this.Height - sizerHeight), sizerWidth, sizerHeight);
 
-            _menu = new TitleBar(this, this.Width, settings.IntOf("ButtonHeight"), 0, settings.colorOf("ButtonBGColor"));
+            _menu = new TitleBar(this, this.Width-sizerWidth, settings.IntOf("ButtonHeight"), 0, settings.colorOf("ButtonBGColor"));
             var b = this._menu.addMenuItem("menu", 50, 20, 0, 0);
             b.setForm(this);
             var c = _menu.addSubMenu("new", b);
@@ -48,6 +53,10 @@ namespace NoteTrackerV3
             c = _menu.addSubMenu("save", b);
             c.addMouseEvent(new MouseEvent(processSave, MouseEvents.LEFT_CLICK));
             this.Controls.Add(c);
+            c = _menu.addSubMenu("hide", b);
+            this.Controls.Add(c);
+            c.addMouseEvent(new MouseEvent(processHide, MouseEvents.LEFT_CLICK));
+
             b = this._menu.addMenuItem("load", 50, 20, 50, 0);
             b.setForm(this);
             b.addOnHover(fillLoadMenu);
@@ -67,6 +76,13 @@ namespace NoteTrackerV3
             this.FormClosing += Pad_FormClosing;
             Messenger.SettingChanged += Messenger_SettingChanged;
         }
+
+        private void processHide(Object o = null, EventArgs e = null)
+        {
+            ((MenuEntity)o).getParent().closeMenu();
+            this.Visible = false;
+        }
+
         public void processSave(Object o = null, EventArgs e = null)
         {
             try
@@ -97,7 +113,7 @@ namespace NoteTrackerV3
 
         private void Messenger_SettingChanged(string arg1, string arg2, string old)
         {
-            this.BackColor = settings.colorOf("ButtonBGColor");
+            //this.BackColor = settings.colorOf("ButtonBGColor");
             this.TopMost = settings.BoolOf("AlwaysOnTop");
             this._sizer.BackColor = settings.colorOf("ButtonFGColor");
         }
@@ -200,6 +216,7 @@ namespace NoteTrackerV3
                 File.Delete(fpath + p.Name);
                 p.getParent().remove(p);
                 p.Dispose();
+                ((MenuEntity)o).destroyASAP = true;
             }
             catch (Exception ex) { MessageBox.Show("Unable to delete file" + ex); }
         }
